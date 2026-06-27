@@ -1,12 +1,14 @@
 """
 Flask主应用 - 提供API接口
 """
+import sys
+import os
+sys.path.insert(0, os.path.dirname(__file__))
 from flask import Flask, jsonify, request, Response, stream_with_context
 from flask_cors import CORS
 from database import db
 from video_parser import parse_video_api
 import requests as http_requests
-import os
 import urllib.parse
 
 app = Flask(__name__)

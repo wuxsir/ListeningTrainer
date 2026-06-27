@@ -384,4 +384,4 @@ class DatabaseManager:
 
 
 # 全局数据库实例
-db = DatabaseManager()
+db = DatabaseManager(db_path="/tmp/data.db")
