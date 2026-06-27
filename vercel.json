@@ -6,11 +6,18 @@
       "use": "@vercel/python"
     },
     {
-      "src": "frontend/dist/**",
-      "use": "@vercel/static"
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "frontend/dist"
+      }
     }
   ],
   "routes": [
+    {
+      "src": "/api/audio_proxy",
+      "dest": "api/app.py"
+    },
     {
       "src": "/api/(.*)",
       "dest": "api/app.py"
